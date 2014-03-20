@@ -207,7 +207,6 @@ class InlineStyle
 
         if(strtolower($node->nodeName) === "style") {
             $stylesheets[] = $node->nodeValue;
-            $node->parentNode->removeChild($node);
         }
         else if(strtolower($node->nodeName) === "link" && strtolower($node->getAttribute('rel')) === 'stylesheet') {
             if($node->hasAttribute("href")) {
@@ -221,7 +220,6 @@ class InlineStyle
 
                 if($ext) {
                     $stylesheets[] = $ext;
-                    $node->parentNode->removeChild($node);
                 }
             }
         }
